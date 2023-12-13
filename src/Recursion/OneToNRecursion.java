@@ -1,3 +1,5 @@
+package Recursion;
+
 import java.util.Scanner;
 
 //1 to N array without loop

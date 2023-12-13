@@ -1,3 +1,5 @@
+package BasicMaths;
+
 //7. reverse a interger (leetcode)
 public class ReverseANumber {
     public int reverse(int x) {

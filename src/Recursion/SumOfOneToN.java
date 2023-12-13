@@ -1,3 +1,5 @@
+package Recursion;
+
 //sum of first n numbers
 //1.5 recursion
 //coding ninjas

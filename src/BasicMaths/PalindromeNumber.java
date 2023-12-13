@@ -1,3 +1,5 @@
+package BasicMaths;
+
 //1.4 basic maths problem
 //9. palindrome (leetcode)
 public class PalindromeNumber {

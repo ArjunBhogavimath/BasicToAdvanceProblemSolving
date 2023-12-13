@@ -1,4 +1,4 @@
-//1.5 recursion
+package Recursion;//1.5 recursion
 //factorial number not greater than n
 //striver a to z course sheet
 import java.util.ArrayList;

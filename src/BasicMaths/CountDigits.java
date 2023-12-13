@@ -1,3 +1,5 @@
+package BasicMaths;
+
 //1.4 Basic Maths striver problems
 //count digits problem coding ninjas
 public class CountDigits {

@@ -1,3 +1,5 @@
+package BasicMaths;
+
 //Prime number
 //maths basic problems 1.4
 //striver a-z

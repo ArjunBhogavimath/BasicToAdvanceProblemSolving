@@ -1,4 +1,4 @@
-//Sum of all divisors
+package BasicMaths;//Sum of all divisors
 // coding ninjas
 //1.4 Maths
 

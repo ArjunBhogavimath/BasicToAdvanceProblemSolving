@@ -1,3 +1,5 @@
+package Recursion;
+
 //print N times string
 //CODING NINJAS
 //1.5 BASIC RECURSION STRIVER

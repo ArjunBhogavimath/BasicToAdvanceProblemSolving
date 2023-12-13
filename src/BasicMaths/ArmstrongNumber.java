@@ -1,4 +1,4 @@
-//check armstrong coding ninjas
+package BasicMaths;//check armstrong coding ninjas
 
 import java.util.*;
 

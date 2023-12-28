@@ -1,0 +1,25 @@
+HashMap -->
+    TC -> logn
+
+ Hasing -->
+ 3 types
+ 1. Division Method
+ 2. Folding Method
+ 3. Mid Square Method
+
+
+ 1.Division Method ----: When the array size is limited we store the data by using modulo of a number
+                        (ex: 128%10 = 8 & 28%10 = 8) so in both case we can store it in arr[8]
+    a. Collision : while storing there can be multiple numbers coming for same index that is called collision
+    b. Chaining : to avoid that we use chaining by using linkedlist,
+                   so basically we chain the data in a sorted order
+                   (ex: arr[8] : 18--> 28 --> 38 --> 138 this is how chaining using linkedlist works)
+        If the collision happens a lot and all the numbers falls under only 1 index then it will be
+        worst case amd takes O(n)
+
+        storing
+                    o(1) best and average case & o(n) in worst case
+        fetching
+
+
+

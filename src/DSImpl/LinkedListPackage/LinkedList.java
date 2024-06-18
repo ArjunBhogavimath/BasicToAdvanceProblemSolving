@@ -30,6 +30,13 @@ public class LinkedList {
 //        System.out.println(node.next);
         Node head = convertArrToLL(arr);
         System.out.println(head.data);
+
+        //traverse in ll
+        Node temp = head;
+        while(temp!=null){
+            System.out.print(temp.data+", ");
+            temp = temp.next;
+        }
     }
 
     public static Node convertArrToLL(int[] arr){

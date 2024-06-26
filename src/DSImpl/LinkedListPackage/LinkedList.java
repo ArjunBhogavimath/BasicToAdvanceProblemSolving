@@ -38,28 +38,38 @@ public class LinkedList {
        //lenght of ll
         System.out.println("Length of LinkedList : "+lengthOfLL(head));
 
-        //search element
-        System.out.println("Is element 5 present : "+searchEle(head,5));
+//        //search element
+//        System.out.println("Is element 5 present : "+searchEle(head,5));
+//
+//        //deleteHead
+//        Node head2 = deleteHead(head);
+//        System.out.println("this is after deleting 1st head pointing to 2nd value --> "+head2.data);
+//        traverseLL(head2);
+//
+//        //deleteTail
+//        Node head3 = deleteLast(head);
+//        System.out.println("this is after deleting tail --> "+head3.data);
+//        traverseLL(head3);
+//
+//        //deleteKthEle
+//        Node head4 = deleteKthPostition(head,1);
+//        System.out.println("this is after deleting Kth element --> "+head4.data);
+//        traverseLL(head4);
+//
+//        //deleteByValue
+//        Node head5 = deleteElement(head,2);
+//        System.out.println("this is after deleting by element --> "+head5.data);
+//        traverseLL(head5);
 
-        //deleteHead
-        Node head2 = deleteHead(head);
-        System.out.println("this is after deleting 1st head pointing to 2nd value --> "+head2.data);
-        traverseLL(head2);
+        //insertAtHead
+        Node hed6 = insertAtHead(head,90);
+        traverseLL(hed6);
+    }
 
-        //deleteTail
-        Node head3 = deleteLast(head);
-        System.out.println("this is after deleting tail --> "+head3.data);
-        traverseLL(head3);
-
-        //deleteKthEle
-        Node head4 = deleteKthPostition(head,1);
-        System.out.println("this is after deleting Kth element --> "+head4.data);
-        traverseLL(head4);
-
-        //deleteByValue
-        Node head5 = deleteElement(head,2);
-        System.out.println("this is after deleting by element --> "+head5.data);
-        traverseLL(head5);
+    public static Node insertAtHead(Node head, int val){
+        //create new Node with new value as data and existing head as next
+        Node temp = new Node(val, head);
+        return temp;
     }
 
     public static Node deleteElement(Node head, int val){

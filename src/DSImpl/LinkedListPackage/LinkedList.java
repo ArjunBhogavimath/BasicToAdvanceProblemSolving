@@ -52,11 +52,36 @@ public class LinkedList {
         traverseLL(head3);
 
         //deleteKthEle
-        Node head4 = deleteKthPostition(head,3);
+        Node head4 = deleteKthPostition(head,1);
         System.out.println("this is after deleting Kth element --> "+head4.data);
         traverseLL(head4);
+
+        //deleteByValue
+        Node head5 = deleteElement(head,2);
+        System.out.println("this is after deleting by element --> "+head5.data);
+        traverseLL(head5);
     }
 
+    public static Node deleteElement(Node head, int val){
+        if(head == null) return head;
+
+        //delete head
+        if(head.data == val) {
+            head = head.next;
+            return head;
+        }
+        Node temp = head;
+        Node prev = null;
+        while(temp != null ){
+            if(temp.data == val){
+                prev.next = prev.next.next;
+                break;
+            }
+            prev = temp;
+            temp = temp.next;
+        }
+        return head;
+    }
 
     public static Node deleteKthPostition(Node head, int k){
         if(head == null) return head;

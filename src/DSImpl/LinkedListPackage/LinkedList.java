@@ -69,6 +69,43 @@ public class LinkedList {
         //insertAtTail
         Node head7 = insertAtTail(head, 98);
         traverseLL(head7);
+        System.out.println();
+
+        //insertAtKthPosition
+        Node head8 = insertAtKthPosition(head, 120,6);
+        traverseLL(head8);
+    }
+
+    public static Node insertAtKthPosition(Node head, int val, int k){
+        //handles if the head is empty and k is 1
+        if(head == null){
+            if(k == 1){
+                return new Node(val);
+            }
+        }
+
+        //check if head is not null and add at 1st place
+        if(k == 1){
+            return new Node(val, head);
+        }
+
+        //now check for k >= 2
+
+        Node temp = head;
+        int count = 0; //we always have to stop at k-1 stop to add new node
+
+        while(temp != null){
+             count++;
+             //stand at 1 place before the k
+             if(k-1 == count){
+                 //create a new node for the new value and assign temp next to x next
+                  Node x = new Node(val,temp.next);
+                  temp.next = x; //now make x as temp next
+                  break;
+             }
+              temp = temp.next;
+        }
+        return head;
     }
 
     public static Node insertAtTail(Node head, int val){

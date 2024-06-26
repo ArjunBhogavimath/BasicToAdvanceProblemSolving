@@ -74,7 +74,37 @@ public class LinkedList {
         //insertAtKthPosition
         Node head8 = insertAtKthPosition(head, 120,6);
         traverseLL(head8);
+        System.out.println();
+
+        //insertAtbefore
+        Node head9 = insertBeforeValue(head, 200,2);
+        traverseLL(head9);
+        System.out.println();
+
     }
+
+    public static Node insertBeforeValue(Node head, int val, int beforeVal){
+        if(head == null) return null;
+
+        if(head.data == beforeVal){
+            return new Node(val, head);
+        }
+
+        //now check for k >= 2
+
+        Node temp = head;
+
+        while(temp.next != null){
+            if(temp.next.data == beforeVal){
+                Node x = new Node(val,temp.next);
+                temp.next = x; //now make x as temp next
+                break;
+            }
+            temp = temp.next;
+        }
+        return head;
+    }
+
 
     public static Node insertAtKthPosition(Node head, int val, int k){
         //handles if the head is empty and k is 1

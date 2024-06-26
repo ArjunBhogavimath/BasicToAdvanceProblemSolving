@@ -32,11 +32,100 @@ public class LinkedList {
         System.out.println(head.data);
 
         //traverse in ll
+       traverseLL(head);
+
+        System.out.println();
+       //lenght of ll
+        System.out.println("Length of LinkedList : "+lengthOfLL(head));
+
+        //search element
+        System.out.println("Is element 5 present : "+searchEle(head,5));
+
+        //deleteHead
+        Node head2 = deleteHead(head);
+        System.out.println("this is after deleting 1st head pointing to 2nd value --> "+head2.data);
+        traverseLL(head2);
+
+        //deleteTail
+        Node head3 = deleteLast(head);
+        System.out.println("this is after deleting tail --> "+head3.data);
+        traverseLL(head3);
+
+        //deleteKthEle
+        Node head4 = deleteKthPostition(head,3);
+        System.out.println("this is after deleting Kth element --> "+head4.data);
+        traverseLL(head4);
+    }
+
+
+    public static Node deleteKthPostition(Node head, int k){
+        if(head == null) return head;
+
+        //delete head
+        if(k == 1) {
+            head = head.next;
+            return head;
+        }
+        Node temp = head;
+        int counter = 0;
+        Node prev = null;
+        while(temp != null ){
+            //temp = temp.next;
+            counter++;
+            if(counter == k){
+                prev.next = prev.next.next;
+                break;
+            }
+            prev = temp;
+            temp = temp.next;
+
+        }
+        return head;
+    }
+
+    public static Node deleteLast(Node head){
+        //if only 1 element in list or none
+        if(head == null || head.next == null) return null;
+        Node temp = head;
+        while (temp.next.next != null){
+            temp = temp.next;
+        }
+        temp.next = null;
+        return head;
+    }
+
+    public static Node deleteHead(Node head){
+        if(head != null) {
+            head = head.next;
+        }
+        return head;
+    }
+
+    public static boolean searchEle(Node head, int search_ele){
+        Node temp = head;
+        while (temp!=null){
+            if(temp.data == search_ele) return true;
+            temp = temp.next;
+        }
+        return false;
+    }
+
+    public static void traverseLL(Node head){
         Node temp = head;
         while(temp!=null){
             System.out.print(temp.data+", ");
             temp = temp.next;
         }
+    }
+
+    public static int lengthOfLL(Node head){
+        int count =0;
+        Node temp = head;
+        while(temp!=null){
+            temp = temp.next;
+            count++;
+        }
+        return count;
     }
 
     public static Node convertArrToLL(int[] arr){

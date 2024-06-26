@@ -64,6 +64,23 @@ public class LinkedList {
         //insertAtHead
         Node hed6 = insertAtHead(head,90);
         traverseLL(hed6);
+        System.out.println();
+
+        //insertAtTail
+        Node head7 = insertAtTail(head, 98);
+        traverseLL(head7);
+    }
+
+    public static Node insertAtTail(Node head, int val){
+        if(head == null) {
+            return new Node(val);
+        }
+        Node temp = head;
+        while(temp.next != null){
+            temp = temp.next;
+        }
+        temp.next = new Node(val);
+        return head;
     }
 
     public static Node insertAtHead(Node head, int val){

@@ -21,7 +21,7 @@ class Node{
 
 public class DoublyLinkedList {
     public static void main(String[] args) {
-        int arr[] = {4, 6 ,22, 6, 91};
+        int arr[] = {4, 9 ,22, 6, 91};
         Node head = convertToDoublyLL(arr);
         traverseLL(head);
 
@@ -34,8 +34,79 @@ public class DoublyLinkedList {
 //        Node head1 = deleteKthPosition(head, 5);
 //        traverseLL(head1);
 
-        Node head1 = deleteElement(head,91);
-        traverseLL(head1);
+//        Node head1 = deleteElement(head,91);
+//        traverseLL(head1);
+
+//        Node head1 = insertBeforeHead(head,88);
+//        traverseLL(head1);
+
+//        Node head1 = insertBeforeTail(head,77);
+//        traverseLL(head1);
+
+//        Node head1 = insertBeforeKthPosition(head,55, 5);
+//        traverseLL(head1);
+
+        insertBeforeNode(580, head.next.next);
+        traverseLL(head);
+    }
+
+    public static void insertBeforeNode(int val, Node node){
+        Node prev = node.before;
+
+        Node newNode = new Node(val, node, prev);
+        prev.next = newNode;
+        node.before = newNode;
+
+    }
+
+    public static Node insertBeforeKthPosition(Node head, int val, int k){
+        if(head == null) return new Node(val);
+
+        else if((head.next == null && k == 1) || (k == 1)){
+            return insertBeforeHead(head,val);
+        }
+
+        Node temp = head;
+        int count = 1;
+        while(temp != null){
+            if(count == k){
+                Node prev =  temp.before;
+                Node node = new Node(val,temp,temp.before);
+                temp.before = node;
+                node.next = temp;
+                node.before = prev;
+                prev.next = node;
+                break;
+            }
+            count++;
+            temp = temp.next;
+        }
+        return head;
+    }
+
+    public static Node insertBeforeTail(Node head, int val){
+        if(head == null) {
+            return new Node(val);
+        }
+        Node temp = head;
+        while (temp.next != null){
+            temp = temp.next;
+        }
+        Node prev = temp.before;
+        Node node = new Node(val,temp,prev);
+        prev.next = node;
+        temp.before = node;
+        return head;
+    }
+
+    public static Node insertBeforeHead(Node head, int val){
+        if(head == null) {
+            return new Node(val);
+        }
+        Node temp = head;
+        Node node = new Node(val, head,null);
+        temp.before = node;
+        return node;
     }
 
     public static Node deleteElement(Node head, int val){

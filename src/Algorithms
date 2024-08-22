@@ -8,4 +8,7 @@ Array Algorithms :
 
 
 LinkedList :
-1. Tortoise and haire's algorithm : https://leetcode.com/problems/middle-of-the-linked-list/
+1. Tortoise and hare's algorithm :
+Problems :
+    https://leetcode.com/problems/middle-of-the-linked-list/
+    https://leetcode.com/problems/linked-list-cycle/description/
